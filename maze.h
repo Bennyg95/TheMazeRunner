@@ -8,10 +8,8 @@ using namespace std;
 
 class Maze
 {
-	private:
-		Tile Board[80][40]; // creates a Board of Tiles
-
 	public:
+		Tile Board[40][80]; // creates a Board of Tiles
 		Maze();	// Initializes the maze
 
 		void changeTiles(); // will be changing the maze every 10 seconds
