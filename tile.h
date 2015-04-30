@@ -30,12 +30,6 @@ class Tile 	// creates an object Tile
         bool getIsWall()const {return isWall;}
         bool getOriginDirection()const {return originDirection;}
 
-
-		//bool isWall(char tile);	// true if Tile is wall
-		//bool isPath(char tile);	// true if Tile is a path <- *****this function seems to be redudant, can you explain its need?*****
-
-
-
 };
 
 #endif
