@@ -28,39 +28,38 @@ Maze::Maze()
 	while(openfile >> temp)
 	{
 
-		openfile >> temp;
-		if(temp == '\n')
-		{
-			temp = ' ';
-		}
+		//openfile >> temp;
 
-		/*
-		if(temp == ' ')
-		{
-			Board[x][y].setPath();
-		}
-		*/
 
-		if(temp == 'x')
+		
+		if(temp == 'w')
 		{
-			Board[x][y].setWall();
+			Board[y][x].setPath();
 		}
-		/*else if(temp == 'S')
+		
+
+		else if(temp == 'x')
 		{
-			Board[x][y].setIsStart(true);
+			Board[y][x].setWall();
+		}
+		else if(temp == 'S')
+		{
+			Board[y][x].setIsStart(true);
+			Board[y][x].setPath();
 		}
 		else if(temp == 'F')
 		{
-			Board[x][y].setIsEnd(true);
-		}*/
-		else
-			Board[x][y].setPath();
+			Board[y][x].setIsEnd(true);
+			Board[y][x].setPath();
+		}
+		
 		x++;
 		if(x == 40)
 		{
-			y++;
 			x = 0;
+			y++;
 		}
+
 
 	}
 
@@ -72,9 +71,9 @@ Maze::Maze()
 void Maze::display()
 // ##############################################################
 {
-	for(int i = 0; i < 40; i++)	// loops through the rows of the maze
+	for(int i = 0; i < 50; i++)	// loops through the rows of the maze
 	{
-		for(int j = 0; j < 80; j++) // loops through the columns of the maze
+		for(int j = 4; j < 44; j++) // loops through the columns of the maze
 			cout << Board[i][j].getTile(); // gets a tile
 		cout << endl;	
 	}
