@@ -1,8 +1,11 @@
 #include "tile.h"
 #include "maze.h"
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream>
 #include <time.h>
 //#include<unistd.h>
+#include <iostream>
 
 using namespace std;
 
@@ -10,11 +13,58 @@ using namespace std;
 Maze::Maze()
 // ##############################################################
 {
-	for(int i = 0; i < 40; i++)	// loops trough the rows of the maze
+
+	ifstream openfile;
+	char temp;
+
+	openfile.open("paths.txt");
+	if(openfile.fail())
 	{
-		for(int j = 0; j < 80; j++)	// loops through the columns of the maze
-			Board[i][j].setWall();	// sets all tiles to wall	
+		cout << "Could not open file." << endl;
+		exit(1);
 	}
+	int x = 0;
+	int y = 0;
+	while(openfile >> temp)
+	{
+
+		openfile >> temp;
+		if(temp == '\n')
+		{
+			temp = ' ';
+		}
+
+		/*
+		if(temp == ' ')
+		{
+			Board[x][y].setPath();
+		}
+		*/
+
+		if(temp == 'x')
+		{
+			Board[x][y].setWall();
+		}
+		/*else if(temp == 'S')
+		{
+			Board[x][y].setIsStart(true);
+		}
+		else if(temp == 'F')
+		{
+			Board[x][y].setIsEnd(true);
+		}*/
+		else
+			Board[x][y].setPath();
+		x++;
+		if(x == 40)
+		{
+			y++;
+			x = 0;
+		}
+
+	}
+
+	openfile.close();
 }
 // ##############################################################
 
