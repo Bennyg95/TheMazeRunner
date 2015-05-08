@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-
 using namespace std;
 
 // ##############################################################
@@ -22,7 +21,8 @@ void Tile::setIsWall(char tile)
 	this->tile = tile;
 	if(tile == 'x')
 		isWall = true; // returns true if tile == 'x'
-	isWall = false;
+	else
+        isWall = false;
 }
 // ##############################################################
 
@@ -41,6 +41,7 @@ char Tile::setPath()
 // ##############################################################
 {
 	tile = ' '; // sets tile to ' '
+	setIsWall(' ');
 	return tile;
 }
 // ##############################################################
@@ -49,6 +50,7 @@ char Tile::setPath()
 void Tile::setIsStart(bool isStart)
 // ##############################################################
 {
+    setPath();
 	this->isStart = isStart;
 }
 // ##############################################################
@@ -57,14 +59,20 @@ void Tile::setIsStart(bool isStart)
 void Tile::setIsEnd(bool isEnd)
 // ##############################################################
 {
+    setPath();
 	this->isEnd = isEnd;
 }
 // ##############################################################
 
 // ##############################################################
-void Tile::setOriginDirection(bool originDirection)
+void Tile::setOriginDirection(char originDirection)
 // ##############################################################
 {
 	this->originDirection = originDirection;
 }
 // ##############################################################
+
+void Tile::setIsKeyLoc(bool isKeyLoc)
+{
+    this->isKeyLoc = isKeyLoc;
+}

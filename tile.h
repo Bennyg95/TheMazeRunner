@@ -11,7 +11,8 @@ class Tile 	// creates an object Tile
 		char tile; // character tile
         bool isStart,
              isEnd,
-             isWall;
+             isWall,
+             isKeyLoc;
         char originDirection;
 
 	public:
@@ -22,13 +23,21 @@ class Tile 	// creates an object Tile
 		void setIsStart(bool isStart);
         void setIsEnd(bool isEnd);
         void setIsWall(char tile);
-        void setOriginDirection(bool originDirection);
+        void setOriginDirection(char originDirection);
+        void setIsKeyLoc(bool isKeyLoc);
 
 		char getTile() const {return tile;}	// returns the value of the tile
         bool getIsStart()const {return isStart;}
         bool getIsEnd()const {return isEnd;}
         bool getIsWall()const {return isWall;}
-        bool getOriginDirection()const {return originDirection;}
+        char getOriginDirection()const {return originDirection;}
+        bool getIsKeyLoc()const {return isKeyLoc;}
+
+
+		//bool isWall(char tile);	// true if Tile is wall
+		//bool isPath(char tile);	// true if Tile is a path <- *****this function seems to be redudant, can you explain its need?*****
+
+
 
 };
 
