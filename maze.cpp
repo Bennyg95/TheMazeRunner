@@ -47,12 +47,12 @@ Maze::Maze()
 			Board[y][x].setIsStart(true);
 			Board[y][x].setPath();
 		}
-		else if(temp == 'F')
+		/*else if(temp == 'F')
 		{
 			Board[y][x].setIsEnd(true);
 			Board[y][x].setPath();
 		}
-		
+		*/
 		x++;
 		if(x == 40)
 		{
