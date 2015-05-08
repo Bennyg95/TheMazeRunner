@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1431119774 source:c:\users\daniel\desktop\themazerunner\maze.cpp
+	"tile.h"
+	"maze.h"
+	<stdio.h>
+	<stdlib.h>
+	<fstream>
+	<time.h>
+	<iostream>
+
+1430762796 c:\users\daniel\desktop\themazerunner\tile.h
+	<string>
+
+1431119774 c:\users\daniel\desktop\themazerunner\maze.h
+	"tile.h"
+	<iostream>
+	<fstream>
+
+1430762796 source:c:\users\daniel\desktop\themazerunner\robot.cpp
+	<iostream>
+	<string>
+	"Robot.h"
+
+1430762796 c:\users\daniel\desktop\themazerunner\robot.h
+	<iostream>
+	<string>
+	"Tile.h"
+
+1431119774 source:c:\users\daniel\desktop\themazerunner\testmaze.cpp
+	"maze.h"
+	"tile.h"
+	<iostream>
+
+1431119774 source:c:\users\daniel\desktop\themazerunner\tile.cpp
+	"tile.h"
+	<iostream>
+
+1431120199 source:c:\users\daniel\desktop\themazerunner\mazedriver.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+
