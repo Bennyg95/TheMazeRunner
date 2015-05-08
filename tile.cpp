@@ -11,6 +11,11 @@ Tile::Tile()
 
 {
 	tile = 'x'; // initializes tile to 'x'
+	isStart = false;
+    isEnd = false;
+    isWall = false;
+    isKeyLoc = false;
+    originDirection = 'q';
 }
 // ##############################################################
 

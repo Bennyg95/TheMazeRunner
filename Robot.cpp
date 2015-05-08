@@ -63,11 +63,10 @@ void Robot::findEnd(Tile board[][40])
 {
     for(int i = 0; i < 50; i++)
     {
-        if(board[i][40].getIsEnd() == true)
+        if(board[i][39].getIsEnd() == true)
         {
-            cout << board[i][38].getIsEnd();
            // mapMemory[i][39].setIsEnd();
-            //cout << "END: x " <<  i << " y 39" << endl;
+            cout << "END: x " <<  i << " y 39" << endl;
         }
 
     }
@@ -82,7 +81,6 @@ void Robot::runRobot(Maze m)
     {
         checkDirections(m.board);
         attemptMove();
-        //cout << " end: "<< mapMemory[getLocRow()][getLocColumn()].getIsEnd() << endl;
     }
 }
 
