@@ -13,5 +13,6 @@ int main()
 
 
     system("PAUSE");
+    system("cls");
     return 0;
 }
