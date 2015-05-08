@@ -15,6 +15,7 @@ Tile::Tile()
     isEnd = false;
     isWall = false;
     isKeyLoc = false;
+    isVisited = false;
     originDirection = 'q';
 }
 // ##############################################################
@@ -80,4 +81,9 @@ void Tile::setOriginDirection(char originDirection)
 void Tile::setIsKeyLoc(bool isKeyLoc)
 {
     this->isKeyLoc = isKeyLoc;
+}
+
+void Tile::setIsVisited()
+{
+    isVisited = true;
 }

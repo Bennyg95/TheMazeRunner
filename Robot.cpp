@@ -65,8 +65,7 @@ void Robot::findEnd(Tile board[][40])
     {
         if(board[i][39].getIsEnd() == true)
         {
-           // mapMemory[i][39].setIsEnd();
-            cout << "END: x " <<  i << " y 39" << endl;
+            mapMemory[i][39].setIsEnd();
         }
 
     }
@@ -80,6 +79,7 @@ void Robot::runRobot(Maze m)
     while(m.board[getLocRow()][getLocColumn()].getIsEnd() == false)
     {
         checkDirections(m.board);
+        //cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
         attemptMove();
     }
 }
@@ -140,7 +140,7 @@ void Robot::checkDirections(Tile board[][40])
     }
 
 
-    if(direction_counter > 1)
+    if(direction_counter > 2)
     {
         mapMemory[getLocRow()][getLocColumn()].setIsKeyLoc(true);
     }
@@ -148,32 +148,52 @@ void Robot::checkDirections(Tile board[][40])
 
 void Robot::attemptMove()
 {
+    char pop;
     if(getIsAdvancing() == true)
     {
         if(mapMemory[getLocRow()][getLocColumn()+1].getIsWall() == false
-            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'e')                // check east
+            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'e'
+            && mapMemory[getLocRow()][getLocColumn()+1].getIsVisited() == false
+            && getLocColumn()+1 < 40)                                           // check east
         {
-            moveRobot(getLocRow(),getLocColumn()+1);
             mapMemory[getLocRow()][getLocColumn()+1].setOriginDirection('w');
+            mapMemory[getLocRow()][getLocColumn()+1].setIsVisited();
+            moveRobot(getLocRow(),getLocColumn()+1);
         }
         else if(mapMemory[getLocRow()-1][getLocColumn()].getIsWall() == false
-            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'n')                // check north
+            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'n'
+            && mapMemory[getLocRow()-1][getLocColumn()].getIsVisited() == false
+            && getLocColumn()-1 < 40)                                         // check north
         {
-            moveRobot(getLocRow()-1,getLocColumn());
             mapMemory[getLocRow()-1][getLocColumn()].setOriginDirection('s');
+            mapMemory[getLocRow()-1][getLocColumn()].setIsVisited();
+            moveRobot(getLocRow()-1,getLocColumn());
         }
         else if(mapMemory[getLocRow()+1][getLocColumn()].getIsWall() == false
-            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 's')                 // check south
+            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 's'
+            && mapMemory[getLocRow()+1][getLocColumn()].getIsVisited() == false
+            && getLocColumn()+1 < 40)                                           // check south
         {
-            moveRobot(getLocRow()+1,getLocColumn());
             mapMemory[getLocRow()+1][getLocColumn()].setOriginDirection('n');
+            mapMemory[getLocRow()+1][getLocColumn()].setIsVisited();
+            moveRobot(getLocRow()+1,getLocColumn());
         }
         else if(mapMemory[getLocRow()][getLocColumn()-1].getIsWall() == false
-            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'w')                 // check west
+            && mapMemory[getLocRow()][getLocColumn()].getOriginDirection() != 'w'
+            && mapMemory[getLocRow()][getLocColumn()-1].getIsVisited() == false
+            && getLocColumn()-1 < 40)                                             // check west
         {
-            moveRobot(getLocRow(),getLocColumn()-1);
             mapMemory[getLocRow()][getLocColumn()-1].setOriginDirection('e');
+            mapMemory[getLocRow()][getLocColumn()-1].setIsVisited();
+            moveRobot(getLocRow(),getLocColumn()-1);
         }
+        else
+        {
+            setIsAdvancing(false);
+        }
+        cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
+        cout << "OD: " << mapMemory[getLocRow()][getLocColumn()].getOriginDirection() << endl;
+        //cin >> pop;
     }
     else
     {

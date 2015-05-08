@@ -12,7 +12,8 @@ class Tile 	// creates an object Tile
         bool isStart,
              isEnd,
              isWall,
-             isKeyLoc;
+             isKeyLoc,
+             isVisited;
         char originDirection;
 
 	public:
@@ -25,6 +26,7 @@ class Tile 	// creates an object Tile
         void setIsWall(char tile);
         void setOriginDirection(char originDirection);
         void setIsKeyLoc(bool isKeyLoc);
+        void setIsVisited();
 
 		char getTile() const {return tile;}	// returns the value of the tile
         bool getIsStart()const {return isStart;}
@@ -32,6 +34,7 @@ class Tile 	// creates an object Tile
         bool getIsWall()const {return isWall;}
         char getOriginDirection()const {return originDirection;}
         bool getIsKeyLoc()const {return isKeyLoc;}
+        bool getIsVisited()const {return isVisited;}
 
 
 		//bool isWall(char tile);	// true if Tile is wall
