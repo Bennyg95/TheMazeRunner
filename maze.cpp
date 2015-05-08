@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
-#include <time.h>
+//#include <time.h>
 //#include<unistd.h>
 #include <iostream>
 
@@ -47,12 +47,12 @@ Maze::Maze()
 			Board[y][x].setIsStart(true);
 			Board[y][x].setPath();
 		}
-		/*else if(temp == 'F')
+		else if(temp == 'F')
 		{
 			Board[y][x].setIsEnd(true);
 			Board[y][x].setPath();
 		}
-		*/
+		
 		x++;
 		if(x == 40)
 		{
@@ -73,11 +73,14 @@ void Maze::display()
 {
 	for(int i = 0; i < 50; i++)	// loops through the rows of the maze
 	{
-		for(int j = 4; j < 44; j++) // loops through the columns of the maze
+		for(int j = 4; j < 44/*44*/; j++) // loops through the columns of the maze
 			cout << Board[i][j].getTile(); // gets a tile
 		cout << endl;	
 	}
 }
 // ##############################################################
 
-		
+void Maze::changeTiles()
+{
+	
+}	
