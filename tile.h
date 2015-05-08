@@ -20,8 +20,8 @@ class Tile 	// creates an object Tile
 
 		char setWall(); // will set the tile to a wall
 		char setPath();	// will set a tile to a path
-		void setIsStart(bool isStart);
-        void setIsEnd(bool isEnd);
+		void setIsStart();
+        void setIsEnd();
         void setIsWall(char tile);
         void setOriginDirection(char originDirection);
         void setIsKeyLoc(bool isKeyLoc);
