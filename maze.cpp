@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
-//#include <time.h>
+#include <time.h>
 //#include<unistd.h>
 #include <iostream>
 
@@ -17,7 +17,7 @@ Maze::Maze()
 	ifstream openfile;
 	char temp;
 
-	openfile.open("paths.txt");
+	openfile.open("/Users/Seichan/Documents/CSITin3/Spring2015/CSS-2A/programs/gamjie/paths.txt");
 	if(openfile.fail())
 	{
 		cout << "Could not open file." << endl;
@@ -31,28 +31,28 @@ Maze::Maze()
 		//openfile >> temp;
 
 
-		
+
 		if(temp == 'w')
 		{
-			Board[y][x].setPath();
+			board[y][x].setPath();
 		}
-		
+
 
 		else if(temp == 'x')
 		{
-			Board[y][x].setWall();
+			board[y][x].setWall();
 		}
 		else if(temp == 'S')
 		{
-			Board[y][x].setIsStart(true);
-			Board[y][x].setPath();
+			board[y][x].setIsStart();
+			board[y][x].setPath();
 		}
 		else if(temp == 'F')
 		{
-			Board[y][x].setIsEnd(true);
-			Board[y][x].setPath();
+			board[y][x].setIsEnd();
+			board[y][x].setPath();
 		}
-		
+
 		x++;
 		if(x == 40)
 		{
@@ -73,14 +73,11 @@ void Maze::display()
 {
 	for(int i = 0; i < 50; i++)	// loops through the rows of the maze
 	{
-		for(int j = 4; j < 44/*44*/; j++) // loops through the columns of the maze
-			cout << Board[i][j].getTile(); // gets a tile
-		cout << endl;	
+		for(int j = 0; j < 40; j++) // loops through the columns of the maze
+			cout << board[i][j].getTile(); // gets a tile
+		cout << endl;
 	}
 }
 // ##############################################################
 
-void Maze::changeTiles()
-{
-	
-}	
+
