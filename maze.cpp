@@ -18,7 +18,7 @@ Maze::Maze()
 	ifstream openfile;
 	char temp;
 
-	openfile.open("paths.txt");
+	openfile.open("/Users/Seichan/Documents/CSITin3/Spring2015/CSS-2A/programs/gamjie/paths.txt");
 	if(openfile.fail())
 	{
 		cout << "Could not open file." << endl;
@@ -74,7 +74,6 @@ void Maze::display()
 {
 	for(int i = 0; i < 50; i++)	// loops through the rows of the maze
 	{
-	    cout << setw(2) << i << " ";
 		for(int j = 0; j < 40; j++) // loops through the columns of the maze
 			cout << board[i][j].getTile(); // gets a tile
 		cout << endl;
