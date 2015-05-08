@@ -75,11 +75,9 @@ void Robot::runRobot(Maze m)
 {
     findStart(m.board);
     findEnd(m.board);
-    //cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
     while(m.board[getLocRow()][getLocColumn()].getIsEnd() == false)
     {
         checkDirections(m.board);
-        //cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
         attemptMove();
     }
 }
@@ -192,8 +190,6 @@ void Robot::attemptMove()
             setIsAdvancing(false);
         }
         cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
-        cout << "OD: " << mapMemory[getLocRow()][getLocColumn()].getOriginDirection() << endl;
-        //cin >> pop;
     }
     else
     {
