@@ -1,10 +1,6 @@
-
 #include "tile.h" // includes the tile.h file
-
 #include <iostream>
-
 using namespace std;
-
 // ##############################################################
 Tile::Tile()
 // ##############################################################
@@ -86,4 +82,10 @@ void Tile::setIsKeyLoc(bool isKeyLoc)
 void Tile::setIsVisited()
 {
     isVisited = true;
+}
+
+void Tile::changeSymbol()
+{
+	tile = 'º';
+	setIsWall('º');
 }

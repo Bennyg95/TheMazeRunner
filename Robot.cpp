@@ -4,13 +4,12 @@
     date: 4/25/15
     Version 1
 */
-
 #include <iostream>
 #include <string>
 #include "Robot.h"
 using namespace std;
 
-
+Maze displayMaze;
 
 /*    int locRow,
         locColumn,
@@ -190,6 +189,10 @@ void Robot::attemptMove()
             setIsAdvancing(false);
         }
         cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
+        displayMaze.changeStatus(getLocRow(),getLocColumn());
+
+        displayMaze.display();
+
     }
     else
     {

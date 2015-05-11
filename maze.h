@@ -15,6 +15,7 @@ class Maze
 		void changeTiles(); // will be changing the maze every 10 seconds
 		bool isTime(); // true if time is up for the 10 seconds
 		void display(); // displays the maze
+		void changeStatus(int x, int y); // changes map to display a symbol for already visted paths
 };
 
 #endif

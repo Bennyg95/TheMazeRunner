@@ -17,8 +17,8 @@ Maze::Maze()
 
 	ifstream openfile;
 	char temp;
-
-	openfile.open("/Users/Seichan/Documents/CSITin3/Spring2015/CSS-2A/programs/gamjie/paths.txt");
+	//openfile.open("/Users/Seichan/Documents/CSITin3/Spring2015/CSS-2A/programs/gamjie/paths.txt");
+	openfile.open("paths.txt");
 	if(openfile.fail())
 	{
 		cout << "Could not open file." << endl;
@@ -81,4 +81,7 @@ void Maze::display()
 }
 // ##############################################################
 
-
+void Maze::changeStatus(int x, int y)
+{
+	board[x][y].changeSymbol();
+}

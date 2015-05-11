@@ -27,6 +27,8 @@ class Tile 	// creates an object Tile
         void setOriginDirection(char originDirection);
         void setIsKeyLoc(bool isKeyLoc);
         void setIsVisited();
+        void changeSymbol();
+
 
 		char getTile() const {return tile;}	// returns the value of the tile
         bool getIsStart()const {return isStart;}
