@@ -6,6 +6,8 @@
 */
 #include <iostream>
 #include <string>
+#include <windows.h>
+
 #include "Robot.h"
 using namespace std;
 
@@ -190,7 +192,8 @@ void Robot::attemptMove()
         }
         cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
         displayMaze.changeStatus(getLocRow(),getLocColumn());
-
+        system("cls");
+        Sleep(300);
         displayMaze.display();
 
     }

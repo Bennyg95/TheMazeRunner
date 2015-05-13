@@ -86,6 +86,6 @@ void Tile::setIsVisited()
 
 void Tile::changeSymbol()
 {
-	tile = 'º';
-	setIsWall('º');
+	tile = '*';
+	setIsWall('*');
 }
