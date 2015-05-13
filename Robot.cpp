@@ -193,8 +193,9 @@ void Robot::attemptMove()
         cout << " x " <<  getLocRow() << " y " << getLocColumn() << endl;
         displayMaze.changeStatus(getLocRow(),getLocColumn());
         system("cls");
-        Sleep(300);
         displayMaze.display();
+        Sleep(300);
+
 
     }
     else
