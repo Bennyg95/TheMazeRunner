@@ -1,3 +1,14 @@
+// ***********************************************************************************
+//
+// Filename: tile.h
+// 
+// Description:
+//
+// Author: Benito Sanchez
+//
+// ***********************************************************************************
+//
+
 #ifndef MAZE_H_INCLUDED
 #define MAZE_H_INCLUDED
 
@@ -6,16 +17,54 @@
 #include <fstream>
 using namespace std;
 
-
+// ###################################################################################
 class Maze
-{
-	public:
-		Tile board[50][40]; // creates a Board of Tiles
-		Maze();	// Initializes the maze
-		void changeTiles(); // will be changing the maze every 10 seconds
-		bool isTime(); // true if time is up for the 10 seconds
-		void display(); // displays the maze
-		void changeStatus(int x, int y); // changes map to display a symbol for already visted paths
-};
+// ###################################################################################
 
+{
+	// ###############################################################################
+	public:
+	// ###############################################################################
+		Tile board[50][40]; // creates a Board of Tiles
+    // ###############################################################################
+
+		// ###########################################################################
+		Maze();	// Initializes the maze
+		// ###########################################################################
+		// 
+		// SUMMARY:
+		//		Sets initial values of the map
+		// PRECONDITION:
+		//		NONE
+		// POSTCONDITION
+		//		Maze has been created and initialized
+		// ###########################################################################
+
+		void changeTiles();
+
+		// ###########################################################################
+		void display(); // displays the maze
+		// ###########################################################################
+		// 
+		// SUMMARY:
+		//		Displays the maze with all its changes
+		// PRECONDITION:
+		//		Maze is not been displayed
+		// POSTCONDITION
+		//		Maze is displayed
+		// ###########################################################################
+
+		// ###########################################################################
+		void changeStatus(int x, int y); // changes map to display a symbol for already visted paths
+		// ###########################################################################
+		// 
+		// SUMMARY:
+		//
+		// PRECONDITION:
+		//
+		// POSTCONDITION
+		//
+		// ###########################################################################
+
+};
 #endif

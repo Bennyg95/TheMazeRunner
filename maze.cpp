@@ -1,10 +1,20 @@
+// ***********************************************************************************
+//
+// Filename: tile.h
+// 
+// Description:
+//
+// Author: Benito Sanchez
+//
+// ***********************************************************************************
+//
+
 #include "tile.h"
 #include "maze.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fstream>
 #include <time.h>
-//#include<unistd.h>
 #include <iostream>
 #include <iomanip>
 
